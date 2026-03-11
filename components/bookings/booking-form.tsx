@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { START_TIMES, END_TIMES, DAY_OPTIONS } from "@/lib/constants";
+import { START_TIMES, END_TIMES, DAY_OPTIONS, to12Hour } from "@/lib/constants";
 
 interface ConflictInfo {
   title: string;
@@ -285,7 +285,7 @@ export function BookingForm({
                 <SelectContent>
                   {START_TIMES.map((time) => (
                     <SelectItem key={time} value={time}>
-                      {time}
+                      {to12Hour(time)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -300,7 +300,7 @@ export function BookingForm({
                 <SelectContent>
                   {END_TIMES.map((time) => (
                     <SelectItem key={time} value={time}>
-                      {time}
+                      {to12Hour(time)}
                     </SelectItem>
                   ))}
                 </SelectContent>
