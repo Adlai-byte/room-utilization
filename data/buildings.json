@@ -1,0 +1,30 @@
+[
+  {
+    "id": "b1",
+    "name": "BSIT Building",
+    "code": "BSIT",
+    "department": "BS Information Technology",
+    "color": "#f97316"
+  },
+  {
+    "id": "b2",
+    "name": "BSCE Building",
+    "code": "BSCE",
+    "department": "BS Civil Engineering",
+    "color": "#0ea5e9"
+  },
+  {
+    "id": "b3",
+    "name": "BSMATH Building",
+    "code": "BSMATH",
+    "department": "BS Mathematics",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "b4",
+    "name": "BITM Building",
+    "code": "BITM",
+    "department": "BS Information Technology Management",
+    "color": "#ea580c"
+  }
+]

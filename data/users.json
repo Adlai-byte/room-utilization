@@ -1,0 +1,83 @@
+[
+  {
+    "id": "u1",
+    "username": "superadmin",
+    "password": "admin123",
+    "name": "System Administrator",
+    "email": "admin@institute.edu",
+    "role": "super_admin",
+    "department": null
+  },
+  {
+    "id": "u2",
+    "username": "bsit_admin",
+    "password": "bsit123",
+    "name": "BSIT Department Admin",
+    "email": "bsit@institute.edu",
+    "role": "admin",
+    "department": "BSIT"
+  },
+  {
+    "id": "u3",
+    "username": "bsce_admin",
+    "password": "bsce123",
+    "name": "BSCE Department Admin",
+    "email": "bsce@institute.edu",
+    "role": "admin",
+    "department": "BSCE"
+  },
+  {
+    "id": "u4",
+    "username": "bsmath_admin",
+    "password": "bsmath123",
+    "name": "BSMATH Department Admin",
+    "email": "bsmath@institute.edu",
+    "role": "admin",
+    "department": "BSMATH"
+  },
+  {
+    "id": "u5",
+    "username": "bitm_admin",
+    "password": "bitm123",
+    "name": "BITM Department Admin",
+    "email": "bitm@institute.edu",
+    "role": "admin",
+    "department": "BITM"
+  },
+  {
+    "id": "u6",
+    "username": "instructor_bsit",
+    "password": "inst123",
+    "name": "Prof. Maria Santos",
+    "email": "msantos@institute.edu",
+    "role": "instructor",
+    "department": "BSIT"
+  },
+  {
+    "id": "u7",
+    "username": "instructor_bsce",
+    "password": "inst123",
+    "name": "Prof. Juan Reyes",
+    "email": "jreyes@institute.edu",
+    "role": "instructor",
+    "department": "BSCE"
+  },
+  {
+    "id": "u8",
+    "username": "instructor_bsmath",
+    "password": "inst123",
+    "name": "Prof. Ana Cruz",
+    "email": "acruz@institute.edu",
+    "role": "instructor",
+    "department": "BSMATH"
+  },
+  {
+    "id": "u9",
+    "username": "instructor_bitm",
+    "password": "inst123",
+    "name": "Prof. Carlos Mendoza",
+    "email": "cmendoza@institute.edu",
+    "role": "instructor",
+    "department": "BITM"
+  }
+]

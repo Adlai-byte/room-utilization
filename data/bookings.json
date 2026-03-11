@@ -1,0 +1,916 @@
+[
+  {
+    "id": "bk1",
+    "roomId": "r1",
+    "userId": "u2",
+    "title": "CS101 - Intro to Computing",
+    "type": "class",
+    "instructor": "Dr. Garcia",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk2",
+    "roomId": "r1",
+    "userId": "u2",
+    "title": "CS201 - Data Structures",
+    "type": "class",
+    "instructor": "Prof. Santos",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk3",
+    "roomId": "r2",
+    "userId": "u2",
+    "title": "CS102 - Programming 1",
+    "type": "class",
+    "instructor": "Dr. Reyes",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk4",
+    "roomId": "r2",
+    "userId": "u2",
+    "title": "CS301 - Database Systems",
+    "type": "class",
+    "instructor": "Prof. Cruz",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk5",
+    "roomId": "r3",
+    "userId": "u2",
+    "title": "IT Orientation Seminar",
+    "type": "event",
+    "instructor": "Dean Martinez",
+    "date": "2026-03-15",
+    "startTime": "09:00",
+    "endTime": "12:00"
+  },
+  {
+    "id": "bk6",
+    "roomId": "r4",
+    "userId": "u2",
+    "title": "CS103 - Computer Programming Lab",
+    "type": "class",
+    "instructor": "Dr. Garcia",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk7",
+    "roomId": "r4",
+    "userId": "u2",
+    "title": "CS202 - OOP Lab",
+    "type": "class",
+    "instructor": "Prof. Santos",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk8",
+    "roomId": "r5",
+    "userId": "u2",
+    "title": "CS401 - Software Engineering Lab",
+    "type": "class",
+    "instructor": "Dr. Lim",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk9",
+    "roomId": "r3",
+    "userId": "u2",
+    "title": "CS302 - Web Development",
+    "type": "class",
+    "instructor": "Prof. Tan",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk10",
+    "roomId": "r6",
+    "userId": "u3",
+    "title": "CE101 - Engineering Drawing",
+    "type": "class",
+    "instructor": "Engr. Villanueva",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk11",
+    "roomId": "r6",
+    "userId": "u3",
+    "title": "CE201 - Structural Analysis",
+    "type": "class",
+    "instructor": "Engr. Bautista",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk12",
+    "roomId": "r7",
+    "userId": "u3",
+    "title": "CE102 - Statics",
+    "type": "class",
+    "instructor": "Engr. Ramos",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk13",
+    "roomId": "r7",
+    "userId": "u3",
+    "title": "CE301 - Concrete Design",
+    "type": "class",
+    "instructor": "Engr. Villanueva",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk14",
+    "roomId": "r8",
+    "userId": "u3",
+    "title": "CE202 - Dynamics",
+    "type": "class",
+    "instructor": "Engr. Bautista",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk15",
+    "roomId": "r9",
+    "userId": "u3",
+    "title": "CE103 - Drafting Lab",
+    "type": "class",
+    "instructor": "Engr. Ramos",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk16",
+    "roomId": "r10",
+    "userId": "u3",
+    "title": "CE302 - Surveying Lab",
+    "type": "class",
+    "instructor": "Engr. Torres",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk17",
+    "roomId": "r11",
+    "userId": "u4",
+    "title": "MATH101 - Calculus 1",
+    "type": "class",
+    "instructor": "Dr. Aquino",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk18",
+    "roomId": "r11",
+    "userId": "u4",
+    "title": "MATH201 - Linear Algebra",
+    "type": "class",
+    "instructor": "Prof. Mendoza",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk19",
+    "roomId": "r12",
+    "userId": "u4",
+    "title": "MATH102 - Calculus 2",
+    "type": "class",
+    "instructor": "Dr. Aquino",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk20",
+    "roomId": "r13",
+    "userId": "u4",
+    "title": "MATH301 - Abstract Algebra",
+    "type": "class",
+    "instructor": "Prof. Mendoza",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk21",
+    "roomId": "r14",
+    "userId": "u4",
+    "title": "MATH202 - Statistics Lab",
+    "type": "class",
+    "instructor": "Dr. Pascual",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk22",
+    "roomId": "r15",
+    "userId": "u4",
+    "title": "Math Week Opening",
+    "type": "event",
+    "instructor": "Dean Aquino",
+    "date": "2026-03-20",
+    "startTime": "09:00",
+    "endTime": "12:00"
+  },
+  {
+    "id": "bk23",
+    "roomId": "r16",
+    "userId": "u5",
+    "title": "ITM101 - Intro to IT Management",
+    "type": "class",
+    "instructor": "Dr. Fernandez",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk24",
+    "roomId": "r16",
+    "userId": "u5",
+    "title": "ITM201 - Systems Analysis",
+    "type": "class",
+    "instructor": "Prof. Castillo",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk25",
+    "roomId": "r17",
+    "userId": "u5",
+    "title": "ITM102 - Business Process",
+    "type": "class",
+    "instructor": "Dr. Fernandez",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk26",
+    "roomId": "r18",
+    "userId": "u5",
+    "title": "ITM301 - Project Management",
+    "type": "class",
+    "instructor": "Prof. Castillo",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk27",
+    "roomId": "r19",
+    "userId": "u5",
+    "title": "ITM103 - IT Lab",
+    "type": "class",
+    "instructor": "Dr. Navarro",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk28",
+    "roomId": "r20",
+    "userId": "u5",
+    "title": "ITM202 - Database Management Lab",
+    "type": "class",
+    "instructor": "Dr. Navarro",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk29",
+    "roomId": "r1",
+    "userId": "u2",
+    "title": "CS Faculty Meeting",
+    "type": "event",
+    "instructor": "Dean Martinez",
+    "date": "2026-03-13",
+    "startTime": "14:00",
+    "endTime": "16:00"
+  },
+  {
+    "id": "bk30",
+    "roomId": "r3",
+    "userId": "u2",
+    "title": "Thesis Defense - Batch 2026",
+    "type": "event",
+    "instructor": "Dr. Lim",
+    "date": "2026-03-18",
+    "startTime": "08:00",
+    "endTime": "17:00"
+  },
+  {
+    "id": "bk31",
+    "roomId": "r5",
+    "userId": "u2",
+    "title": "CS402 - Capstone Project Lab",
+    "type": "class",
+    "instructor": "Dr. Lim",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk32",
+    "roomId": "r21",
+    "userId": "u2",
+    "title": "IT Elective - Mobile Dev",
+    "type": "class",
+    "instructor": "Prof. Tan",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk33",
+    "roomId": "r8",
+    "userId": "u3",
+    "title": "CE Faculty Meeting",
+    "type": "event",
+    "instructor": "Dean Villanueva",
+    "date": "2026-03-14",
+    "startTime": "14:00",
+    "endTime": "16:00"
+  },
+  {
+    "id": "bk34",
+    "roomId": "r12",
+    "userId": "u4",
+    "title": "MATH103 - Discrete Math",
+    "type": "class",
+    "instructor": "Dr. Pascual",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk35",
+    "roomId": "r13",
+    "userId": "u4",
+    "title": "MATH302 - Real Analysis",
+    "type": "class",
+    "instructor": "Dr. Aquino",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk36",
+    "roomId": "r23",
+    "userId": "u4",
+    "title": "MATH Tutoring Session",
+    "type": "recurring",
+    "instructor": "Math Tutors",
+    "date": "2026-03-11",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk37",
+    "roomId": "r24",
+    "userId": "u5",
+    "title": "ITM302 - E-Commerce",
+    "type": "class",
+    "instructor": "Prof. Reyes",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk38",
+    "roomId": "r17",
+    "userId": "u5",
+    "title": "ITM Faculty Meeting",
+    "type": "event",
+    "instructor": "Dean Fernandez",
+    "date": "2026-03-12",
+    "startTime": "14:00",
+    "endTime": "16:00"
+  },
+  {
+    "id": "bk39",
+    "roomId": "r15",
+    "userId": "u4",
+    "title": "MATH201 - Probability",
+    "type": "class",
+    "instructor": "Prof. Mendoza",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk40",
+    "roomId": "r9",
+    "userId": "u3",
+    "title": "CE201 - Materials Testing Lab",
+    "type": "class",
+    "instructor": "Engr. Torres",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk41",
+    "roomId": "r6",
+    "userId": "u3",
+    "title": "CE302 - Geotechnical Eng",
+    "type": "class",
+    "instructor": "Engr. Ramos",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk42",
+    "roomId": "r19",
+    "userId": "u5",
+    "title": "ITM201 - Networking Lab",
+    "type": "class",
+    "instructor": "Dr. Navarro",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk43",
+    "roomId": "r2",
+    "userId": "u2",
+    "title": "CS202 - Algorithms",
+    "type": "class",
+    "instructor": "Prof. Cruz",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk44",
+    "roomId": "r21",
+    "userId": "u2",
+    "title": "CS301 - Networks",
+    "type": "class",
+    "instructor": "Dr. Reyes",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk45",
+    "roomId": "r7",
+    "userId": "u3",
+    "title": "CE103 - Fluid Mechanics",
+    "type": "class",
+    "instructor": "Engr. Bautista",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk46",
+    "roomId": "r10",
+    "userId": "u3",
+    "title": "CE401 - Construction Mgmt",
+    "type": "class",
+    "instructor": "Engr. Torres",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk47",
+    "roomId": "r14",
+    "userId": "u4",
+    "title": "MATH102 - Numerical Methods Lab",
+    "type": "class",
+    "instructor": "Dr. Pascual",
+    "date": "2026-03-11",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk48",
+    "roomId": "r16",
+    "userId": "u5",
+    "title": "ITM301 - IT Governance",
+    "type": "class",
+    "instructor": "Prof. Reyes",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Tue",
+        "Thu"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk49",
+    "roomId": "r18",
+    "userId": "u5",
+    "title": "ITM102 - Info Systems",
+    "type": "class",
+    "instructor": "Dr. Fernandez",
+    "date": "2026-03-11",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  },
+  {
+    "id": "bk50",
+    "roomId": "r20",
+    "userId": "u5",
+    "title": "ITM401 - IT Capstone Lab",
+    "type": "class",
+    "instructor": "Dr. Navarro",
+    "date": "2026-03-11",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "recurrence": {
+      "type": "weekly",
+      "days": [
+        "Mon",
+        "Wed"
+      ],
+      "until": "2026-06-30"
+    }
+  }
+]
