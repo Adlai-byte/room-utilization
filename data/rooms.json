@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "id": "r1",
+    "name": "Room 101",
+    "buildingId": "b1",
+    "capacity": 40,
+    "amenities": ["projector", "whiteboard", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r2",
+    "name": "Room 102",
+    "buildingId": "b1",
+    "capacity": 35,
+    "amenities": ["projector", "whiteboard"],
+    "status": "active"
+  },
+  {
+    "id": "r3",
+    "name": "Computer Lab 1",
+    "buildingId": "b1",
+    "capacity": 30,
+    "amenities": ["projector", "computers", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r4",
+    "name": "Room 201",
+    "buildingId": "b2",
+    "capacity": 45,
+    "amenities": ["projector", "whiteboard", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r5",
+    "name": "Room 202",
+    "buildingId": "b2",
+    "capacity": 40,
+    "amenities": ["projector", "whiteboard"],
+    "status": "active"
+  },
+  {
+    "id": "r6",
+    "name": "Drafting Lab",
+    "buildingId": "b2",
+    "capacity": 25,
+    "amenities": ["projector", "drafting tables", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r7",
+    "name": "Room 301",
+    "buildingId": "b3",
+    "capacity": 35,
+    "amenities": ["projector", "whiteboard"],
+    "status": "active"
+  },
+  {
+    "id": "r8",
+    "name": "Room 302",
+    "buildingId": "b3",
+    "capacity": 30,
+    "amenities": ["projector", "whiteboard", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r9",
+    "name": "Room 401",
+    "buildingId": "b4",
+    "capacity": 40,
+    "amenities": ["projector", "whiteboard", "aircon"],
+    "status": "active"
+  },
+  {
+    "id": "r10",
+    "name": "Room 402",
+    "buildingId": "b4",
+    "capacity": 35,
+    "amenities": ["projector", "computers"],
+    "status": "active"
+  }
+]

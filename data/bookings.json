@@ -1,1 +1,97 @@
-[]
+[
+  {
+    "id": "bk1",
+    "roomId": "r1",
+    "userId": "u1",
+    "title": "CS101 - Intro to Computing",
+    "type": "class",
+    "instructor": "Dr. Garcia",
+    "date": "2026-03-12",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": { "type": "weekly", "days": ["Mon", "Wed", "Fri"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk2",
+    "roomId": "r2",
+    "userId": "u1",
+    "title": "IT201 - Data Structures",
+    "type": "class",
+    "instructor": "Prof. Santos",
+    "date": "2026-03-12",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": { "type": "weekly", "days": ["Tue", "Thu"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk3",
+    "roomId": "r3",
+    "userId": "u1",
+    "title": "IT103 - Programming Lab",
+    "type": "class",
+    "instructor": "Dr. Garcia",
+    "date": "2026-03-12",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": { "type": "weekly", "days": ["Mon", "Wed"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk4",
+    "roomId": "r4",
+    "userId": "u1",
+    "title": "CE101 - Engineering Mechanics",
+    "type": "class",
+    "instructor": "Engr. Reyes",
+    "date": "2026-03-12",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "recurrence": { "type": "weekly", "days": ["Mon", "Wed", "Fri"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk5",
+    "roomId": "r7",
+    "userId": "u1",
+    "title": "MATH201 - Calculus II",
+    "type": "class",
+    "instructor": "Dr. Cruz",
+    "date": "2026-03-12",
+    "startTime": "09:00",
+    "endTime": "11:00",
+    "recurrence": { "type": "weekly", "days": ["Tue", "Thu"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk6",
+    "roomId": "r9",
+    "userId": "u1",
+    "title": "ITM101 - Business IT",
+    "type": "class",
+    "instructor": "Prof. Lim",
+    "date": "2026-03-12",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "recurrence": { "type": "weekly", "days": ["Mon", "Wed"], "until": "2026-06-30" }
+  },
+  {
+    "id": "bk7",
+    "roomId": "r1",
+    "userId": "u1",
+    "title": "Department Meeting",
+    "type": "event",
+    "instructor": "Dean Villanueva",
+    "date": "2026-03-13",
+    "startTime": "14:00",
+    "endTime": "16:00"
+  },
+  {
+    "id": "bk8",
+    "roomId": "r5",
+    "userId": "u1",
+    "title": "CE202 - Structural Analysis",
+    "type": "class",
+    "instructor": "Engr. Mendoza",
+    "date": "2026-03-12",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "recurrence": { "type": "weekly", "days": ["Tue", "Thu"], "until": "2026-06-30" }
+  }
+]
