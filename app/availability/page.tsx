@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import { format } from "date-fns";
 import { toast } from "sonner";
 import { Search, Building2, Users, Clock } from "lucide-react";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { Building } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { AMENITY_OPTIONS, START_TIMES, END_TIMES } from "@/lib/constants";
+import { AMENITY_OPTIONS, START_TIMES, END_TIMES, to12Hour } from "@/lib/constants";
 
 interface AvailableRoom {
   id: string;
@@ -34,8 +33,7 @@ interface AvailableRoom {
 }
 
 export default function AvailabilityPage() {
-  const { user, loading } = useAuth();
-  const router = useRouter();
+  const { user } = useAuth();
 
   const [buildings, setBuildings] = useState<Building[]>([]);
   const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
@@ -46,13 +44,6 @@ export default function AvailabilityPage() {
   const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
   const [results, setResults] = useState<AvailableRoom[] | null>(null);
   const [searching, setSearching] = useState(false);
-
-  // Redirect to login if not authenticated
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-    }
-  }, [user, loading, router]);
 
   // Fetch buildings
   const fetchBuildings = useCallback(async () => {
@@ -140,25 +131,10 @@ export default function AvailabilityPage() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="mx-auto max-w-7xl px-4 py-6">
-          <div className="flex h-64 items-center justify-center">
-            <div className="text-sm text-slate-500">Loading...</div>
-          </div>
-        </main>
-      </div>
-    );
-  }
-
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="mx-auto max-w-7xl px-4 py-6">
+    <AppShell>
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-slate-900">
@@ -202,12 +178,12 @@ export default function AvailabilityPage() {
                   onValueChange={(v) => v && setStartTime(v)}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Start time" />
+                    <SelectValue placeholder="Start time" displayValue={to12Hour(startTime)} />
                   </SelectTrigger>
                   <SelectContent>
                     {START_TIMES.map((time) => (
                       <SelectItem key={time} value={time}>
-                        {time}
+                        {to12Hour(time)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -222,12 +198,12 @@ export default function AvailabilityPage() {
                   onValueChange={(v) => v && setEndTime(v)}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="End time" />
+                    <SelectValue placeholder="End time" displayValue={to12Hour(endTime)} />
                   </SelectTrigger>
                   <SelectContent>
                     {END_TIMES.map((time) => (
                       <SelectItem key={time} value={time}>
-                        {time}
+                        {to12Hour(time)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -248,7 +224,10 @@ export default function AvailabilityPage() {
                   }
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="All buildings" />
+                    <SelectValue
+                      placeholder="All buildings"
+                      displayValue={buildingId === "all" ? "All Buildings" : availableBuildings.find(b => b.id === buildingId)?.name}
+                    />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Buildings</SelectItem>
@@ -373,7 +352,6 @@ export default function AvailabilityPage() {
             )}
           </div>
         )}
-      </main>
-    </div>
+    </AppShell>
   );
 }

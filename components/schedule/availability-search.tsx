@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { START_TIMES, END_TIMES } from "@/lib/constants";
+import { START_TIMES, END_TIMES, to12Hour } from "@/lib/constants";
 
 interface AvailableRoom {
   id: string;
@@ -99,12 +99,12 @@ export function AvailabilitySearch() {
             onValueChange={(v) => v && setStartTime(v)}
           >
             <SelectTrigger className="h-8 w-28 text-sm">
-              <SelectValue placeholder="Start" />
+              <SelectValue placeholder="Start" displayValue={to12Hour(startTime)} />
             </SelectTrigger>
             <SelectContent>
               {START_TIMES.map((time) => (
                 <SelectItem key={time} value={time}>
-                  {time}
+                  {to12Hour(time)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -119,12 +119,12 @@ export function AvailabilitySearch() {
             onValueChange={(v) => v && setEndTime(v)}
           >
             <SelectTrigger className="h-8 w-28 text-sm">
-              <SelectValue placeholder="End" />
+              <SelectValue placeholder="End" displayValue={to12Hour(endTime)} />
             </SelectTrigger>
             <SelectContent>
               {END_TIMES.map((time) => (
                 <SelectItem key={time} value={time}>
-                  {time}
+                  {to12Hour(time)}
                 </SelectItem>
               ))}
             </SelectContent>

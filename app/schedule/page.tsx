@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { format } from "date-fns";
 import { toast } from "sonner";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { BuildingTabs } from "@/components/schedule/building-tabs";
 import { ViewToggle } from "@/components/schedule/view-toggle";
 import { Timetable } from "@/components/schedule/timetable";
@@ -125,95 +125,79 @@ export default function SchedulePage() {
     []
   );
 
-  if (authLoading) {
-    return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="mx-auto max-w-7xl px-4 py-6">
-          <div className="flex h-64 items-center justify-center">
-            <div className="text-sm text-slate-500">Loading...</div>
-          </div>
-        </main>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="mx-auto max-w-7xl px-4 py-6">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-slate-900">Schedule</h1>
-          <p className="mt-1 text-sm text-slate-500">
-            View and manage room schedules across buildings. Click a room name to see its full schedule.
-          </p>
+    <AppShell>
+      {/* Header */}
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-slate-900">Schedule</h1>
+        <p className="mt-1 text-sm text-slate-500">
+          View and manage room schedules across buildings. Click a room name to see its full schedule.
+        </p>
+      </div>
+
+      {/* Controls */}
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <BuildingTabs
+          buildings={buildings}
+          selectedId={selectedBuilding}
+          onSelect={setSelectedBuilding}
+          disabled={isAdmin}
+        />
+        <div className="flex items-center gap-2">
+          <span className="rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+            Day View
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            className="no-print"
+            onClick={() => window.print()}
+          >
+            <Printer className="h-4 w-4 mr-1" />
+            Print
+          </Button>
         </div>
+      </div>
 
-        {/* Controls */}
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <BuildingTabs
-            buildings={buildings}
-            selectedId={selectedBuilding}
-            onSelect={setSelectedBuilding}
-            disabled={isAdmin}
-          />
-          <div className="flex items-center gap-2">
-            <span className="rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
-              Day View
-            </span>
-            <Button
-              variant="outline"
-              size="sm"
-              className="no-print"
-              onClick={() => window.print()}
-            >
-              <Printer className="h-4 w-4 mr-1" />
-              Print
-            </Button>
-          </div>
-        </div>
+      {/* Date Navigation */}
+      <div className="mb-4">
+        <ViewToggle date={selectedDate} onDateChange={setSelectedDate} />
+      </div>
 
-        {/* Date Navigation */}
-        <div className="mb-4">
-          <ViewToggle date={selectedDate} onDateChange={setSelectedDate} />
-        </div>
-
-        {/* Timetable */}
-        {loading && !rooms.length ? (
-          <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white">
-            <div className="text-sm text-slate-500">
-              Loading schedule...
-            </div>
-          </div>
-        ) : (
-          <Timetable
-            rooms={rooms}
-            bookings={bookings}
-            buildingColor={currentBuilding?.color || "#f97316"}
-            selectedDate={selectedDate}
-            onCellClick={handleCellClick}
-            onBookingClick={handleBookingClick}
-            onRoomClick={setSelectedRoom}
-          />
-        )}
-
-        {/* Legend */}
-        <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-1.5">
-            <span className="inline-block h-3 w-3 rounded border border-blue-300 bg-blue-100" />
-            Class
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="inline-block h-3 w-3 rounded border border-purple-300 bg-purple-100" />
-            Event
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="inline-block h-3 w-3 rounded border border-green-300 bg-green-100" />
-            Recurring
+      {/* Timetable */}
+      {loading && !rooms.length ? (
+        <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white">
+          <div className="text-sm text-slate-500">
+            Loading schedule...
           </div>
         </div>
-      </main>
+      ) : (
+        <Timetable
+          rooms={rooms}
+          bookings={bookings}
+          buildingColor={currentBuilding?.color || "#f97316"}
+          selectedDate={selectedDate}
+          onCellClick={handleCellClick}
+          onBookingClick={handleBookingClick}
+          onRoomClick={setSelectedRoom}
+        />
+      )}
+
+      {/* Legend */}
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-500">
+        <div className="flex items-center gap-1.5">
+          <span className="inline-block h-3 w-3 rounded border border-blue-300 bg-blue-100" />
+          Class
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="inline-block h-3 w-3 rounded border border-purple-300 bg-purple-100" />
+          Event
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="inline-block h-3 w-3 rounded border border-green-300 bg-green-100" />
+          Recurring
+        </div>
+      </div>
 
       {/* Room Schedule Modal */}
       <RoomScheduleModal
@@ -223,6 +207,6 @@ export default function SchedulePage() {
         buildingColor={currentBuilding?.color || "#f97316"}
         fetchRoomBookings={fetchRoomBookings}
       />
-    </div>
+    </AppShell>
   );
 }

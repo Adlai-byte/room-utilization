@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { Building, Room } from "@/lib/types";
 import { RoomForm } from "@/components/rooms/room-form";
@@ -31,7 +30,6 @@ import { MaintenanceDialog } from "@/components/rooms/maintenance-dialog";
 
 export default function RoomsPage() {
   const { user, loading } = useAuth();
-  const router = useRouter();
 
   const [buildings, setBuildings] = useState<Building[]>([]);
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -78,10 +76,6 @@ export default function RoomsPage() {
   );
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-      return;
-    }
     if (user) {
       fetchBuildings();
       // Admin users see only their building's rooms
@@ -91,7 +85,7 @@ export default function RoomsPage() {
         fetchRooms();
       }
     }
-  }, [user, loading, router, fetchBuildings, fetchRooms]);
+  }, [user, loading, fetchBuildings, fetchRooms]);
 
   // Filter rooms based on building and search
   useEffect(() => {
@@ -242,23 +236,18 @@ export default function RoomsPage() {
       ? buildings.filter((b) => b.code === user.department)
       : buildings;
 
-  if (loading || loadingData) {
+  if (loadingData) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center py-20">
-            <p className="text-slate-500">Loading...</p>
-          </div>
-        </main>
-      </div>
+      <AppShell>
+        <div className="flex items-center justify-center py-20">
+          <p className="text-slate-500">Loading...</p>
+        </div>
+      </AppShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6">
+    <AppShell>
         {/* Page header */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -291,7 +280,10 @@ export default function RoomsPage() {
           <Select value={selectedBuildingId} onValueChange={(v) => v && setSelectedBuildingId(v)}>
             <SelectTrigger className="w-[200px]">
               <Building2 className="h-4 w-4 text-slate-400" />
-              <SelectValue placeholder="All Buildings" />
+              <SelectValue
+                placeholder="All Buildings"
+                displayValue={selectedBuildingId === "all" ? "All Buildings" : availableBuildings.find(b => b.id === selectedBuildingId)?.name}
+              />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Buildings</SelectItem>
@@ -394,7 +386,6 @@ export default function RoomsPage() {
             </TableBody>
           </Table>
         </div>
-      </main>
 
       {/* Room form dialog */}
       <RoomForm
@@ -427,6 +418,6 @@ export default function RoomsPage() {
         onSchedule={handleScheduleMaintenance}
         onClear={handleClearMaintenance}
       />
-    </div>
+    </AppShell>
   );
 }

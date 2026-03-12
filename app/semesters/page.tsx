@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { Semester, Booking } from "@/lib/types";
 import { toast } from "sonner";
@@ -36,8 +35,7 @@ interface ImportResult {
 }
 
 export default function SemestersPage() {
-  const { user, loading } = useAuth();
-  const router = useRouter();
+  const { user } = useAuth();
 
   const [semesters, setSemesters] = useState<Semester[]>([]);
   const [bookings, setBookings] = useState<Booking[]>([]);
@@ -87,20 +85,12 @@ export default function SemestersPage() {
   }, []);
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-      return;
-    }
-    if (!loading && user && user.role !== "super_admin") {
-      router.push("/dashboard");
-      return;
-    }
-    if (user && user.role === "super_admin") {
+    if (user) {
       Promise.all([fetchSemesters(), fetchBookings()]).finally(() => {
         setLoadingData(false);
       });
     }
-  }, [user, loading, router, fetchSemesters, fetchBookings]);
+  }, [user, fetchSemesters, fetchBookings]);
 
   const getBookingCount = (semesterId: string) => {
     return bookings.filter((b) => b.semesterId === semesterId).length;
@@ -277,24 +267,19 @@ export default function SemestersPage() {
     }
   };
 
-  if (loading || loadingData) {
+  if (loadingData) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center py-20">
-            <p className="text-slate-500">Loading...</p>
-          </div>
-        </main>
-      </div>
+      <AppShell>
+        <div className="flex items-center justify-center py-20">
+          <p className="text-slate-500">Loading...</p>
+        </div>
+      </AppShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6">
-        {/* Page header */}
+    <AppShell>
+      {/* Page header */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
@@ -389,7 +374,6 @@ export default function SemestersPage() {
             })}
           </div>
         )}
-      </main>
 
       {/* Create/Edit Semester Dialog */}
       <Dialog
@@ -606,6 +590,6 @@ export default function SemestersPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
+    </AppShell>
   );
 }

@@ -216,7 +216,13 @@ export function BookingForm({
             <Label>Room</Label>
             <Select value={roomId} onValueChange={(v) => v && setRoomId(v)}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a room" />
+                <SelectValue
+                  placeholder="Select a room"
+                  displayValue={roomId ? (() => {
+                    const r = rooms.find(rm => rm.id === roomId);
+                    return r ? `${r.name} (Cap: ${r.capacity})` : roomId;
+                  })() : undefined}
+                />
               </SelectTrigger>
               <SelectContent>
                 {roomsByBuilding.map((group) => (
@@ -238,7 +244,7 @@ export function BookingForm({
             <Label>Type</Label>
             <Select value={type} onValueChange={(val) => val && setType(val as Booking["type"])}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select type" />
+                <SelectValue placeholder="Select type" displayValue={type ? type.charAt(0).toUpperCase() + type.slice(1) : undefined} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="class">Class</SelectItem>
@@ -280,7 +286,7 @@ export function BookingForm({
               <Label>Start Time</Label>
               <Select value={startTime} onValueChange={(v) => v && setStartTime(v)}>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Start" />
+                  <SelectValue placeholder="Start" displayValue={to12Hour(startTime)} />
                 </SelectTrigger>
                 <SelectContent>
                   {START_TIMES.map((time) => (
@@ -295,7 +301,7 @@ export function BookingForm({
               <Label>End Time</Label>
               <Select value={endTime} onValueChange={(v) => v && setEndTime(v)}>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="End" />
+                  <SelectValue placeholder="End" displayValue={to12Hour(endTime)} />
                 </SelectTrigger>
                 <SelectContent>
                   {END_TIMES.map((time) => (

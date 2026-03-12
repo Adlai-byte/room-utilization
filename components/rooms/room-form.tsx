@@ -112,7 +112,10 @@ export function RoomForm({
             <Label>Building</Label>
             <Select value={buildingId} onValueChange={(v) => v && setBuildingId(v)}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a building" />
+                <SelectValue
+                  placeholder="Select a building"
+                  displayValue={buildingId ? buildings.find(b => b.id === buildingId)?.name : undefined}
+                />
               </SelectTrigger>
               <SelectContent>
                 {buildings.map((building) => (
@@ -161,7 +164,10 @@ export function RoomForm({
             <Label>Status</Label>
             <Select value={status} onValueChange={(val) => val && setStatus(val as Room["status"])}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select status" />
+                <SelectValue
+                  placeholder="Select status"
+                  displayValue={status ? status.charAt(0).toUpperCase() + status.slice(1) : undefined}
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="active">Active</SelectItem>

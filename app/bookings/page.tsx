@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { Building, Room, Booking } from "@/lib/types";
 import { BookingForm } from "@/components/bookings/booking-form";
@@ -31,7 +30,6 @@ import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 
 export default function BookingsPage() {
   const { user, loading } = useAuth();
-  const router = useRouter();
 
   const [buildings, setBuildings] = useState<Building[]>([]);
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -98,15 +96,11 @@ export default function BookingsPage() {
   );
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-      return;
-    }
     if (user) {
       fetchBuildings();
       fetchRooms();
     }
-  }, [user, loading, router, fetchBuildings, fetchRooms]);
+  }, [user, loading, fetchBuildings, fetchRooms]);
 
   // Fetch bookings when building or date filter changes
   useEffect(() => {
@@ -235,23 +229,18 @@ export default function BookingsPage() {
       ? buildings.filter((b) => b.code === user.department)
       : buildings;
 
-  if (loading || loadingData) {
+  if (loadingData) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center py-20">
-            <p className="text-slate-500">Loading...</p>
-          </div>
-        </main>
-      </div>
+      <AppShell>
+        <div className="flex items-center justify-center py-20">
+          <p className="text-slate-500">Loading...</p>
+        </div>
+      </AppShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6">
+    <AppShell>
         {/* Page header */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -276,7 +265,10 @@ export default function BookingsPage() {
           >
             <SelectTrigger className="w-[200px]">
               <Building2 className="h-4 w-4 text-slate-400" />
-              <SelectValue placeholder="All Buildings" />
+              <SelectValue
+                placeholder="All Buildings"
+                displayValue={selectedBuildingId === "all" ? "All Buildings" : availableBuildings.find(b => b.id === selectedBuildingId)?.name}
+              />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Buildings</SelectItem>
@@ -390,7 +382,6 @@ export default function BookingsPage() {
             </TableBody>
           </Table>
         </div>
-      </main>
 
       {/* Booking form dialog */}
       <BookingForm
@@ -415,6 +406,6 @@ export default function BookingsPage() {
         variant="destructive"
         onConfirm={() => { if (deleteTarget) handleDeleteBooking(deleteTarget); }}
       />
-    </div>
+    </AppShell>
   );
 }

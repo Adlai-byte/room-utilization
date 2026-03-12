@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { ActivityLogEntry } from "@/lib/types";
 import { toast } from "sonner";
@@ -82,8 +81,7 @@ function ActivityLogSkeleton() {
 }
 
 export default function ActivityLogPage() {
-  const { user, loading } = useAuth();
-  const router = useRouter();
+  const { user } = useAuth();
 
   const [data, setData] = useState<ActivityLogResponse | null>(null);
   const [loadingData, setLoadingData] = useState(true);
@@ -136,45 +134,35 @@ export default function ActivityLogPage() {
   }, [page, actionFilter, entityFilter, startDate, endDate]);
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-      return;
-    }
     if (user) {
       fetchActivityLog();
     }
-  }, [user, loading, router, fetchActivityLog]);
+  }, [user, fetchActivityLog]);
 
   // Reset to page 1 when filters change
   useEffect(() => {
     setPage(1);
   }, [actionFilter, entityFilter, startDate, endDate]);
 
-  if (loading || (loadingData && !data)) {
+  if (loadingData && !data) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="mx-auto max-w-7xl px-4 py-6">
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-              Activity Log
-            </h1>
-            <p className="mt-1 text-sm text-slate-500">
-              Loading activity log...
-            </p>
-          </div>
-          <ActivityLogSkeleton />
-        </main>
-      </div>
+      <AppShell>
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+            Activity Log
+          </h1>
+          <p className="mt-1 text-sm text-slate-500">
+            Loading activity log...
+          </p>
+        </div>
+        <ActivityLogSkeleton />
+      </AppShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-
-      <main className="mx-auto max-w-7xl px-4 py-6">
-        {/* Page header */}
+    <AppShell>
+      {/* Page header */}
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900">
@@ -371,7 +359,6 @@ export default function ActivityLogPage() {
             </div>
           </div>
         )}
-      </main>
-    </div>
+    </AppShell>
   );
 }

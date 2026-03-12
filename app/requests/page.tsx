@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/app-shell";
 import { useAuth } from "@/lib/auth";
 import { Booking } from "@/lib/types";
 import { toast } from "sonner";
@@ -34,7 +34,7 @@ interface PendingBooking extends Booking {
 }
 
 export default function RequestsPage() {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
 
   const [requests, setRequests] = useState<PendingBooking[]>([]);
@@ -61,18 +61,10 @@ export default function RequestsPage() {
   }, [router]);
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-      return;
-    }
-    if (user && user.role !== "super_admin" && user.role !== "admin") {
-      router.push("/dashboard");
-      return;
-    }
     if (user) {
       fetchRequests();
     }
-  }, [user, loading, router, fetchRequests]);
+  }, [user, fetchRequests]);
 
   const handleApprove = async (bookingId: string) => {
     setProcessing(true);
@@ -139,25 +131,20 @@ export default function RequestsPage() {
     });
   };
 
-  if (loading || loadingData) {
+  if (loadingData) {
     return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center py-20">
-            <p className="text-slate-500">Loading...</p>
-          </div>
-        </main>
-      </div>
+      <AppShell>
+        <div className="flex items-center justify-center py-20">
+          <p className="text-slate-500">Loading...</p>
+        </div>
+      </AppShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6">
-        {/* Page header */}
-        <div className="mb-6">
+    <AppShell>
+      {/* Page header */}
+      <div className="mb-6">
           <div className="flex items-center gap-2">
             <FileText className="h-6 w-6 text-orange-500" />
             <h1 className="text-2xl font-bold text-slate-900">
@@ -269,7 +256,6 @@ export default function RequestsPage() {
             </TableBody>
           </Table>
         </div>
-      </main>
 
       {/* Approve confirmation */}
       <ConfirmDialog
@@ -341,6 +327,6 @@ export default function RequestsPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
+    </AppShell>
   );
 }
